@@ -1,0 +1,28 @@
+/* Some basic page styles */
+body {
+	background-color: #fff;
+	font-family: sans-serif;
+	margin: 4% 10%;
+}
+
+/* Label styles: style as needed */
+label {
+	display:block;
+	margin-top:2em;
+	font-size: 0.9em;
+	color:#777;
+}
+.select-css	{
+	margin: .5em 0;
+}
+
+.dark-wrapper {
+	margin-top: 2em;
+	padding: 1em 1em 1em;
+	background: #444;
+}
+
+.dark-wrapper label {
+	margin-top: 0;
+	color: #ccc;
+}
