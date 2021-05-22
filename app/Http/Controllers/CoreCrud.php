@@ -6,8 +6,7 @@ use App\Models\firebase;
 use App\Models\gejalaAllModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class CoreCrud extends Controller
 {
@@ -387,7 +386,13 @@ class CoreCrud extends Controller
         return view('notification.error404');
 
     }
-    
+    $cek_status_bobot = DB:: table('setting_gejala')->get();
+
+    foreach ($cek_status_bobot as $status_gejala){
+        $Data = array ();
+        $status_gejalabobot = $status_gejala->status;
+    }
+   
     $status_user = session()->get('login_done');
     $case = $request->nama_case.'.kode_gejala';
     $nama_penyakit = $request->nama_penyakit;
@@ -404,7 +409,7 @@ class CoreCrud extends Controller
     ->join('gejala_all', $case, '=', 'gejala_all.kode_gejala')
     ->get();
 
-    $totalbobotgejala = DB::table($request->nama_case)->sum('bobot_gejala');
+    $totalbobotgejala = DB::table($request->nama_case)->sum($status_gejalabobot);
     $solusi = DB::table('solusi')->get();
     
 

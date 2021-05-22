@@ -96,7 +96,7 @@ class LoginController extends Controller
        
         $key = DB:: table('akun')->where('username',$data->username);
         Mail::to($data->email)->send(new Akun_Mail($user));
-        alert()->error('Silahkan Konfirmasi Email Anda', 'Sukses');
+        alert()->error('Akun Anda Berhasil Dibuat', 'Sukses');
         return redirect('/auth'); 
    
 
