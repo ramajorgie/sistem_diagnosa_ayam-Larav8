@@ -1,1 +1,1 @@
-# diagnosa_ayam
+# sistem_diagnosa_ayam
