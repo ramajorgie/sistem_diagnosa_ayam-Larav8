@@ -1,1 +1,1 @@
-# sistem_diagnosa_ayam
+# Cooldown
